@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+torchaudio
+torch
+chatterbox-tts
