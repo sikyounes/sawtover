@@ -1,0 +1,34 @@
+{% extends "cms/base_cms.html" %}
+{% block title %}Edit Post - CMS{% endblock %}
+{% block page_title %}Edit Post{% endblock %}
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" value="{{ request.form.title if request.form.title is defined else post.title }}" required>
+        </div>
+        <div>
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="10" required>{{ request.form.content if request.form.content is defined else post.content }}</textarea>
+        </div>
+        <div>
+            <label>Current Slug:</label> {{ post.slug }}
+        </div>
+        <div>
+            <label for="image">Current Image:</label>
+            {% if post.image_url %}
+                <img src="{{ post.image_url }}" alt="{{ post.title }}" width="200">
+            {% else %}
+                <p>No image uploaded.</p>
+            {% endif %}
+        </div>
+        <div>
+            <label for="image">New Image (optional):</label>
+            <input type="file" id="image" name="image" accept="image/*">
+        </div>
+        <div>
+            <button type="submit">Update Post</button>
+        </div>
+    </form>
+    <a href="{{ url_for(cms.list_posts) }}">Back to Posts</a>
+{% endblock %}

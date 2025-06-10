@@ -1,5 +1,5 @@
-fastapi
-uvicorn
-torchaudio
-torch
-chatterbox-tts
+Flask
+Flask-PyMongo
+cloudinary
+python-dotenv
+gunicorn

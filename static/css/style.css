@@ -1,0 +1,137 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+}
+
+article {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px #ccc dotted;
+}
+
+article:last-child {
+    border-bottom: none;
+}
+
+article h2 a {
+    color: #333;
+    text-decoration: none;
+}
+
+article h2 a:hover {
+    color: #000;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+/* CMS Specific Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* So padding doesn't add to width */
+}
+
+button[type="submit"] {
+    background: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background: #4cae4c;
+}
+
+.flash.error {
+    color: red;
+    background: #fdd;
+    padding: 10px;
+    margin-bottom:10px;
+}
+.flash.success {
+    color: green;
+    background: #dfd;
+    padding: 10px;
+    margin-bottom:10px;
+}
+
+ul {
+    list-style: none;
+    padding:0;
+}
+li.error, li.success {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+li.error {
+    color: red;
+    background: #fdd;
+}
+li.success {
+    color: green;
+    background: #dfd;
+}

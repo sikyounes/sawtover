@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My AI News Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for(static, filename=css/style.css) }}">
+</head>
+<body>
+    <header class="blog-header">
+        <h1><a href="{{ url_for(blog.index) }}">AI Updates & News</a></h1>
+        <p>Your source for the latest in AI.</p>
+    </header>
+    <main class="blog-main">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="blog-footer">
+        <p>&copy; {{ now.year if now else "2024" }} My AI News Blog. <a href="{{ url_for(cms.index) }}">CMS Login</a></p>
+    </footer>
+</body>
+</html>

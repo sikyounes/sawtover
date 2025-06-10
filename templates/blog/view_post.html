@@ -1,0 +1,21 @@
+{% extends "blog/base_blog.html" %}
+{% block title %}{{ post.title }} - AI Updates & News{% endblock %}
+{% block content %}
+    <article class="blog-post-full">
+        <h2>{{ post.title }}</h2>
+        <p class="post-meta">
+            Published: {{ post.created_at.strftime("%B %d, %Y %H:%M") if post.created_at else "N/A" }}
+            {% if post.updated_at and post.updated_at != post.created_at %}
+                | Updated: {{ post.updated_at.strftime("%B %d, %Y %H:%M") }}
+            {% endif %}
+        </p>
+        {% if post.image_url %}
+            <img src="{{ post.image_url }}" alt="{{ post.title }}" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+        {% endif %}
+        <div class="post-content">
+            {{ post.content | safe }}
+        </div>
+    </article>
+    <hr class="content-divider">
+    <a href="{{ url_for(blog.index) }}" class="button">Back to all posts</a>
+{% endblock %}

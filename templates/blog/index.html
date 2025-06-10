@@ -1,0 +1,17 @@
+{% extends "blog/base_blog.html" %}
+{% block title %}Home - AI Updates & News{% endblock %}
+{% block content %}
+    {% for post in posts %}
+        <article class="blog-post-summary">
+            <h2><a href="{{ url_for(blog.view_post, slug=post.slug) }}">{{ post.title }}</a></h2>
+            <p class="post-meta">Published on: {{ post.created_at.strftime("%B %d, %Y") if post.created_at else "N/A" }}</p>
+            {% if post.image_url %}
+                <img src="{{ post.image_url }}" alt="{{ post.title }}" style="max-width: 300px; height: auto; margin-bottom: 10px;">
+            {% endif %}
+            <p>{{ post.content[:200] | safe }}... <a href="{{ url_for(blog.view_post, slug=post.slug) }}">Read More</a></p>
+        </article>
+        <hr class="post-divider">
+    {% else %}
+        <p>No posts yet. Check back soon!</p>
+    {% endfor %}
+{% endblock %}
