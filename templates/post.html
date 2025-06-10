@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} - My Blog{% endblock %}
+
+{% block content %}
+  <article>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+  </article>
+  <a href="{{ url_for('index') }}">Back to all posts</a>
+{% endblock %}
